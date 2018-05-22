@@ -47,15 +47,16 @@ namespace AdventureGame
                     {
                         room1 = Room1();
                     }
-                    Console.ReadKey();
+                    Console.ReadLine();
                     return false;
                 case "no":
                     Console.WriteLine("Goodbye!");
-                    Console.ReadKey();
+                    Console.ReadLine();
+                    Environment.Exit(0);
                     return false;
                 default:
                     Console.WriteLine("Please say yes or no.");
-                    Console.ReadKey();
+                    Console.ReadLine();
                     return true;
             }
         }
@@ -78,17 +79,17 @@ namespace AdventureGame
                 case "1":
                     Console.WriteLine("That is a dank ass book\n" +
                         "\nGo Back");
-                    Console.ReadKey();
+                    Console.ReadLine();
                     return true;
                 case "2":
                     Console.WriteLine("The door is made of wood, and it has a handle\n" +
                         "\nGo Back");
-                    Console.ReadKey();
+                    Console.ReadLine();
                     return true;
                 case "3":
                     Console.WriteLine("You jump around, like an idiot. As expected.\n" +
                         "\nGo Back");
-                    Console.ReadKey();
+                    Console.ReadLine();
                     return true;
                 case "4":
                     bool room2 = true;
@@ -96,11 +97,11 @@ namespace AdventureGame
                     {
                         room2 = Room2();
                     }
-                    Console.ReadKey();
+                    Console.ReadLine();
                     return false;
                 default:
                     Console.WriteLine("Please select one of the options");
-                    Console.ReadKey();
+                    Console.ReadLine();
                     return true;
             }
         }
@@ -119,29 +120,19 @@ namespace AdventureGame
             switch (result)
             {
                 case "1":
-                    bool room3 = true;
-                    while (room3)
-                    {
-                        room3 = Room3();
-                    }
-                    Console.ReadKey();
-                    return false;
+                    Room3();
+                    break;
                 case "2":
-                    bool room4 = true;
-                    while (room4)
-                    {
-                        room4 = Room4();
-                    }
-                    Console.ReadKey();
-                    return false;
+                    Room4();
+                    break;
                 case "3":
-                    bool room1 = true;
-                    while (room1)
-                    {
-                        room1 = Room1();
-                    }
-                    Console.ReadKey();
-                    return false;
+                    Room1();
+                    break;
+                default:
+                    Console.WriteLine("Please select one of the options.");
+                    Console.ReadLine();
+                    Room2();
+                    break;
             }
             return false;
         }
@@ -151,9 +142,9 @@ namespace AdventureGame
             Console.Clear();
             Console.WriteLine("Wow, another room.\n" +
                 "\n1) Look at the table" +
-                "\n2) Get out of this boring room");
+                "\n2) Get out of this boring room\n");
 
-            Console.Write("\nOption: ");
+            Console.Write("Option: ");
             string result = Console.ReadLine();
 
             Console.Clear();
@@ -164,17 +155,13 @@ namespace AdventureGame
                     Key();
                     break;
                 case "2":
-                    bool room2 = true;
-                    while (room2)
-                    {
-                        room2 = Room2();
-                    }
-                    Console.ReadKey();
-                    return false;
+                    Room2();
+                    break;
                 default:
                     Console.WriteLine("Please select one of the options");
-                    Console.ReadKey();
-                    return true;
+                    Console.ReadLine();
+                    Room3();
+                    break;
             }
 
             return false;
@@ -188,11 +175,63 @@ namespace AdventureGame
                 "\n2) Look at roof" +
                 "\n3) Go back to Room2" +
                 "\n4) Go to Room5");
+            Console.Write("\nOption: ");
+            string result = Console.ReadLine();
+
+            Console.Clear();
+
+            switch (result)
+            {
+                case "1":
+                    Console.WriteLine("Nothing yet");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                    break;
+                case "2":
+                    Console.WriteLine("Nothing yet");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                    break;
+                case "3":
+                    Room2();
+                    Console.ReadLine();
+                    break;
+                case "4":
+                    Console.Clear();
+                    if (key == false)
+                    {
+                        Console.WriteLine("You try the door, but find it locked.");
+                        Console.ReadLine();
+                        Room4();
+                    }
+                    else if (key == true)
+                    {
+                        Console.Write("You use the ");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("key");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write(" on the door, and it unlocks. You proceed!");
+                        Console.ReadLine();
+                        Room5();
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Please select one of the options.");
+                    Console.ReadLine();
+                    Room4();
+                    break;
+            }
+
+
             return false;
         }
         private static bool Room5()
         {
             // somehow get a puzzle?
+            Console.Clear();
+            Console.WriteLine("You made it to room 5!");
+            Console.ReadLine();
+            Environment.Exit(0);
             return false;
         }
         private static bool Room6()
@@ -211,8 +250,8 @@ namespace AdventureGame
             Console.Write("key");
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(" on the table.");
-            Console.Write("\n\nTake the key?" +
-                "\nOption: ");
+            Console.Write("\n\nTake the key?\n" +
+                "\nYes / No: ");
             string choice = Console.ReadLine();
             choice = choice.ToLower();
                 Console.Clear();
@@ -226,7 +265,7 @@ namespace AdventureGame
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.Write("!");
                         key = true;
-                        Console.ReadKey();
+                        Console.ReadLine();
                         Room3();
                         break;
                     case "no":
@@ -236,12 +275,12 @@ namespace AdventureGame
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.Write(" on the table.");
                         key = false;
-                        Console.ReadKey();
+                        Console.ReadLine();
                         Room3();
                         break;
                     default:
                         Console.WriteLine("Please select one of the options.");
-                        Console.ReadKey();
+                        Console.ReadLine();
                         Key();
                         break;
                 }
@@ -253,7 +292,7 @@ namespace AdventureGame
                 Console.Write("key");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write(".");
-                Console.ReadKey();
+                Console.ReadLine();
                 key = true;
                 Room3();
             }
