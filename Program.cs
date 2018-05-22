@@ -30,7 +30,7 @@ namespace AdventureGame
             Console.Write("Hello ");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write($"{characterName}");
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ResetColor();
             Console.Write("! Welcome to the game! Ready to start?");
             Console.Write("\n\nYes / No: ");
             string result = Console.ReadLine();
@@ -184,12 +184,12 @@ namespace AdventureGame
                 case "1":
                     Console.WriteLine("Nothing yet");
                     Console.ReadLine();
-                    Environment.Exit(0);
+                    Room4();
                     break;
                 case "2":
                     Console.WriteLine("Nothing yet");
                     Console.ReadLine();
-                    Environment.Exit(0);
+                    Room4();
                     break;
                 case "3":
                     Room2();
@@ -208,7 +208,7 @@ namespace AdventureGame
                         Console.Write("You use the ");
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write("key");
-                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.ResetColor();
                         Console.Write(" on the door, and it unlocks. You proceed!");
                         Console.ReadLine();
                         Room5();
@@ -220,8 +220,6 @@ namespace AdventureGame
                     Room4();
                     break;
             }
-
-
             return false;
         }
         private static bool Room5()
@@ -237,6 +235,9 @@ namespace AdventureGame
         private static bool Room6()
         {
             //end of the game
+            Console.WriteLine("Get the fuck outta here");
+            Console.ReadLine();
+            Environment.Exit(0);
             return false;
         }
         private static void Key()
@@ -248,7 +249,7 @@ namespace AdventureGame
             Console.Write("There's a ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("key");
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ResetColor();
             Console.Write(" on the table.");
             Console.Write("\n\nTake the key?\n" +
                 "\nYes / No: ");
@@ -262,7 +263,7 @@ namespace AdventureGame
                         Console.Write("You picked up the ");
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write("key");
-                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.ResetColor();
                         Console.Write("!");
                         key = true;
                         Console.ReadLine();
@@ -272,7 +273,7 @@ namespace AdventureGame
                         Console.Write("You leave the ");
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write("key");
-                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.ResetColor();
                         Console.Write(" on the table.");
                         key = false;
                         Console.ReadLine();
@@ -290,7 +291,7 @@ namespace AdventureGame
                 Console.Write("The table is empty, you already took the ");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("key");
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ResetColor();
                 Console.Write(".");
                 Console.ReadLine();
                 key = true;
