@@ -13,8 +13,6 @@ namespace AdventureGame
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Change test");
-
             Console.WriteLine("Please enter your character's name: \n");
             Console.Write("Name: ");
             characterName = Console.ReadLine();
