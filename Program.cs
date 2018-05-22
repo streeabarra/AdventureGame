@@ -9,7 +9,6 @@ namespace AdventureGame
     class Program
     {
         private static string characterName;
-        private static string[] items = { "one", "two", "three" };
         private static bool key = false;
 
         static void Main(string[] args)
@@ -65,7 +64,7 @@ namespace AdventureGame
             Console.Clear();
             Console.WriteLine("You are in some room, what are your actions?");
 
-            Console.WriteLine("1) Look at a book " +
+            Console.WriteLine("\n1) Look at a book " +
                 "\n2) Look at the door " +
                 "\n3) Jump like an idiot " +
                 "\n4) Go to Room 2");
@@ -229,7 +228,8 @@ namespace AdventureGame
         {
             // somehow get a puzzle?
             Console.Clear();
-            Console.WriteLine("You made it to room 5!");
+            Console.WriteLine("You made it to room 5!" +
+                "\nNothing else here yet, sorry!");
             Console.ReadLine();
             Environment.Exit(0);
             return false;
