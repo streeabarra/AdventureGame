@@ -79,16 +79,19 @@ namespace AdventureGame
                     Console.WriteLine("That is a dank ass book\n" +
                         "\nGo Back");
                     Console.ReadLine();
+                    Room1();
                     return true;
                 case "2":
                     Console.WriteLine("The door is made of wood, and it has a handle\n" +
                         "\nGo Back");
                     Console.ReadLine();
+                    Room1();
                     return true;
                 case "3":
                     Console.WriteLine("You jump around, like an idiot. As expected.\n" +
                         "\nGo Back");
                     Console.ReadLine();
+                    Room1();
                     return true;
                 case "4":
                     bool room2 = true;
@@ -101,6 +104,7 @@ namespace AdventureGame
                 default:
                     Console.WriteLine("Please select one of the options");
                     Console.ReadLine();
+                    Room1();
                     return true;
             }
         }
